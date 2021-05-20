@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { removeObjectFromCart } from "../actions/cart";
+import { removeDishFromCart } from "../actions/cart";
 
 export default function Cart({ openCart, toggleCart }) {
   let dispatch = useDispatch();
@@ -29,7 +29,7 @@ export default function Cart({ openCart, toggleCart }) {
                 </div>
                 <button
                   onClick={() => {
-                    dispatch(removeObjectFromCart(dish.id));
+                    dispatch(removeDishFromCart(dish));
                   }}
                 >
                   X

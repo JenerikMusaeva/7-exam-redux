@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeObjectFromCart } from "../actions/cart";
+import { removeDishFromCart } from "../actions/cart";
 
 export default function CheckOut({ setOpenCart }) {
   let dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function CheckOut({ setOpenCart }) {
                 </div>
                 <button
                   onClick={() => {
-                    dispatch(removeObjectFromCart(dish.id));
+                    dispatch(removeDishFromCart(dish.id));
                   }}
                 >
                   X

@@ -36,10 +36,12 @@ export default function cartReducer(state = initialState, action) {
       break;
 
     case REMOVE_FROM_CART:
+
+      const { quantity } = state.dishes.find((dish) => dish.id === action.payload.id)
       return {
         ...state,
-        dishes: state.dishes.filter((dish) => dish.id !== action.payload),
-        totalPrice: state.totalPrice - action.dish.price,
+        dishes: state.dishes.filter((dish) => dish.id !== action.payload.id),
+        totalPrice: state.totalPrice - (action.payload.price * quantity),
         quantity: state.quantity - 1,
       };
       break;

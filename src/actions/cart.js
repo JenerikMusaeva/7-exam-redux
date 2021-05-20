@@ -2,18 +2,18 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "./types";
 
 
 
-export function addObjectToCart(selectedDish) {
+export function addObjectToCart(dish) {
 
   return {
     type: ADD_TO_CART,
-    dish: selectedDish
+    dish: dish
   }
 }
 
-export function removeObjectFromCart(id) {
+export function removeDishFromCart(dish) {
 
   return {
     type: REMOVE_FROM_CART,
-    payload: id,
+    payload: dish,
   }
 }
